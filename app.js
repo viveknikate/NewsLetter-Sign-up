@@ -51,12 +51,12 @@ app.post('/',(req,res)=>{
                res.sendFile(__dirname+'/failure.html');
           }
 
-          response.on('data', function(data){
-               console.log(JSON.parse(data))
-          })
+          // response.on('data', function(data){
+          //      console.log(JSON.parse(data))
+          // })
      })
 
-     request.write(jsonData)
+     // request.write(jsonData)
      request.end();
 
      // res.send(`<h1>Thanks for Subscribing ${name} ${surname} <br/> we sent confirmation on ${email}</h1>`)
@@ -72,7 +72,7 @@ app.listen(process.env.PORT || 3000,(req, res)=>{
 })
 
 // api key
-// generate new key when you need.
+// generate new key when you need. this project might fail due to inproper api key
 
 // audience ID
 // ID 2825d03d4a
