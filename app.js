@@ -39,7 +39,7 @@ app.post('/',(req,res)=>{
 
      const options = {
           method: 'POST',
-          auth:'Vivek:ab80ca295ee56276cc1a2f8ef8f32687-s13'
+          auth:'Vivek:0a286a91ae6e6abe254133ebaa2d6c49-us13'
      }
 
      const request = https.request(URL, options, (response)=>{
@@ -51,12 +51,12 @@ app.post('/',(req,res)=>{
                res.sendFile(__dirname+'/failure.html');
           }
 
-          // response.on('data', function(data){
-          //      console.log(JSON.parse(data))
-          // })
+          response.on('data', function(data){
+               console.log(JSON.parse(data))
+          })
      })
 
-     // request.write(jsonData)
+     request.write(jsonData)
      request.end();
 
      // res.send(`<h1>Thanks for Subscribing ${name} ${surname} <br/> we sent confirmation on ${email}</h1>`)
@@ -72,8 +72,8 @@ app.listen(process.env.PORT || 3000,(req, res)=>{
 })
 
 // api key
-// ab80ca295ee56276cc1a2f8ef8f32687-us13
+// generate new key when you need.
 
-// ID
-// 2825d03d4a
+// audience ID
+// ID 2825d03d4a
 
